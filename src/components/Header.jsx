@@ -4,12 +4,16 @@ import logo from '../assets/logo.png'
 import Button from "./Button";
 
 function Header() {
+  const fn = () => {
+    alert('test alert')
+  }
+
   return (
     <div className="header">
       <div className="container">
         <Link to="/">
           <div className="header__logo">
-            <img src={logo} alt=""/>
+            <img src={logo} alt="Astrio logo"/>
             <div className="header__logo-content">
               <h1>React Catalogue</h1>  
               <p>почти то же, что на Vue</p>
@@ -19,7 +23,10 @@ function Header() {
 
         <div className="header__cart">
           <Link to="/cart">
-            <Button>
+            <Button 
+            onClick={fn}
+            className="button--cart"
+            >
               <svg
                 width="18"
                 height="18"
@@ -49,7 +56,7 @@ function Header() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>0</span>
+              <span>234</span>
             </Button>
           </Link>
         </div>

@@ -1,16 +1,17 @@
 import React from 'react';
 
-function Sidebar(props) {
+function Sidebar({items}) {
     return (
         <div className="sidebar">
             <h3 className="sidebar__title">All brands</h3>
             <ul className="sidebar__menu">
-                {/* {props.items && props.items.map((title, index) => (
+                {items.map((item, index) => (
                     <li 
+                    onClick={() => alert(item.title)}
                     className="sidebar__menu-item"
-                    key={`${index}_${title}`}
-                    >{title}</li>
-                ))} */}
+                    key={`${index}_${item.title}`}
+                    >{item.title}</li>
+                ))}
             </ul>
           </div>
     )
