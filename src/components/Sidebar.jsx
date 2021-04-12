@@ -1,19 +1,33 @@
+import classNames from 'classnames';
 import React from 'react';
 
-function Sidebar({items}) {
+function Sidebar({ items }) {
+    const [activeItem, setActiveItem] = React.useState(null);
+
+    const onSelectedItem = (index) => {
+        setActiveItem(index)
+    }
+
     return (
         <div className="sidebar">
-            <h3 className="sidebar__title">All brands</h3>
             <ul className="sidebar__menu">
+                <li           
+                    className={classNames("sidebar__menu-item", activeItem === null ? 'sidebar__menu-item_active' : '')} 
+                    onClick={() => onSelectedItem(null)}
+                >
+                All brands</li>
                 {items.map((item, index) => (
-                    <li 
-                    onClick={() => alert(item.title)}
-                    className="sidebar__menu-item"
-                    key={`${index}_${item.title}`}
-                    >{item.title}</li>
+                    <li
+                        onClick={() => onSelectedItem(index)}
+                        className={classNames("sidebar__menu-item",
+                            activeItem === index ? 'sidebar__menu-item_active' : ''
+                        )}
+                        key={`${index}_${item.title}`}
+                    >
+                    {item.title}</li>
                 ))}
             </ul>
-          </div>
+        </div>
     )
 }
 export default Sidebar;

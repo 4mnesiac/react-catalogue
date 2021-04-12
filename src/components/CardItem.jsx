@@ -1,19 +1,18 @@
 import React from 'react';
-import acc from "../assets/acc.png"
 
-function CardItem(props) {
+function CardItem({image, title, brand, price, currency, type}) {
     return (
         <div>
               <img
                 className="catalog-item__image"
-                src={acc}
-                alt="Not allowed "
+                src={image}
+                alt={title}
               />
-              <h2>{props.title}</h2>
-              <p>{props.brand}</p>
-              <p>{props.currency === 'USD' ? '$' : ''} {props.price}</p>
+              <h2>{title}</h2>
+              <p>Brand {brand}</p>
+              <p>{currency === 'USD' ? '$' : ''} {price}</p>
               {/* TODO рефактор */}
-              <div className={props.type === 'simple' ? 'catalog-item_nonconfigurable' : "catalog-item_configurable"}>
+              <div className={type === 'simple' ? 'catalog-item_simple' : "catalog-item_configurable"}>
                 <fieldset>
                   <label htmlFor="color1">
                     <span
