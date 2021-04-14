@@ -17,16 +17,15 @@ function App() {
         <Header />
 		    <Route path="/" component={Home} exact />
         <Route path="/cart" component={Cart} exact />
-        <div className="main-container">
+        <main className="main-container">
           <Sidebar items={brands}></Sidebar>
-          <div className="catalog">
+          <section className="catalog">
               <h1>Catalog</h1>
               <Category></Category>
-          </div>
-        </div>
+          </section>
+        </main>
       </div>
     </div>
   );
 }
-
 export default App;

@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.sidebar {
+    min-width:21%;
+    text-align: center;
+    padding:10px;
+    & h3{
+      margin: 10px 0;
+    }
+    &__menu {
+      border-right: 2px solid $black;
+    }
+    &__menu-item {
+      cursor: pointer;
+      margin: 0 auto;
+      padding: 12px;
+      border-bottom: 1px solid $gray-line;
+  
+    }
+    &__menu-item_active {
+      background: $black;
+      color: #f6f6f6;
+    }
+    
+  }

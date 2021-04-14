@@ -9,7 +9,7 @@ function Sidebar({ items }) {
     }
 
     return (
-        <div className="sidebar">
+        <aside className="sidebar">
             <ul className="sidebar__menu">
                 <li           
                     className={classNames("sidebar__menu-item", activeItem === null ? 'sidebar__menu-item_active' : '')} 
@@ -27,7 +27,7 @@ function Sidebar({ items }) {
                     {item.title}</li>
                 ))}
             </ul>
-        </div>
+        </aside>
     )
 }
 export default Sidebar;

@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <div className="header">
-      <div className="container">
+      <div className="header__container">
         <Link to="/">
           <div className="header__logo">
             <img src={logo} alt="Astrio logo"/>
