@@ -1,3 +1,11 @@
+/*    
+TODO: 
+имена селекторов по бэм
+поправить миксины
+почистить код
+поправить респонсив
+*/
+
 // @import 'fonts';
 // @import 'variables';
 @import 'libs/normalize';
@@ -96,11 +104,24 @@ body {
 }
 .sidebar {
   min-width:21%;
-  border-right: 2px solid $black;
   text-align: center;
   padding:10px;
   & h3{
     margin: 10px 0;
+  }
+  &__menu {
+    border-right: 2px solid $black;
+  }
+  &__menu-item {
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 12px;
+    border-bottom: 1px solid $gray-line;
+
+  }
+  &__menu-item_active {
+    background: $black;
+    color: #f6f6f6;
   }
   
 }
@@ -125,16 +146,19 @@ body {
     width: 22%;
     min-height: 380px;
     margin: 10px;
-    // &__image {
-
-    // }
+    &__image {
+      width: 100%;
+    }
     &_configurable {
-      display: none;
+
       & fieldset{
         border: none;
         display: flex;
         margin-top:6px;
       }
+    }
+    &_simple {
+      display: none;
     }
     
     & input {
